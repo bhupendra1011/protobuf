@@ -18,20 +18,19 @@ const bytes = new Uint8Array([
 ]);
 
 // v2 stt payload data  (not works)
-const sttBytes = new Uint8Array([
-  101, 194, 20, 187, 0, 32, 0, 78, 31, 134, 117, 140, 105, 98, 22, 159, 118,
-  110, 218, 46, 200, 220, 217, 243, 156, 75, 73, 194, 73, 116, 221, 5, 197, 228,
-  162, 125, 64, 3, 217, 153, 236, 48, 241, 34, 213, 87, 252, 148, 182, 144, 237,
-  109, 110, 16, 202, 44, 224, 167, 10, 205, 145, 31, 130, 96, 229, 22, 89, 187,
-  20, 69, 106, 128, 159, 6, 249, 137, 236, 107, 13, 233, 194, 81, 132, 109, 165,
-  158, 231, 179, 172, 232, 188, 166, 56, 90, 242, 220, 48, 62, 166, 27, 245, 53,
-  164, 46, 66, 183,
+const encryption_bytes = new Uint8Array([
+  101, 216, 65, 224, 0, 1, 0, 52, 19, 118, 91, 78, 226, 27, 203, 81, 114, 69,
+  220, 22, 65, 60, 33, 66, 177, 201, 234, 188, 69, 42, 180, 245, 37, 254, 231,
+  207, 68, 43, 247, 239, 13, 249, 0, 150, 19, 31, 103, 183, 15, 138, 15, 28,
+  212, 152, 226, 108, 31, 127, 250, 7, 41, 25, 56, 144, 171, 109, 57, 247, 40,
+  239, 212, 134, 15, 165, 39, 250, 109, 44, 94, 53, 77, 140, 4, 235, 171, 239,
+  222, 182, 148, 123,
 ]);
 
 // Deseralize V1 API data  the binary data :
 //const textstream = protoRoot.lookupType("Text").decode(bytes);
 
 // Deseralize V2 API data  the binary data : not works format issue
-const textstream = protoRoot.lookupType("Text").decode(sttBytes);
+const textstream = protoRoot.lookupType("Text").decode(encryption_bytes);
 
 console.log("Decoded payload ", textstream);
